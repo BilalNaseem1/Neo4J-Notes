@@ -53,3 +53,39 @@ Node properties are used to:
 - Answer specific details of the use cases for the application.
 - Return data.
 
+![alt text](image-8.png)
+
+# Modeling Relationships
+Connections are the verbs in your use cases:
+
+- What ingredients are used in a recipe?
+- Who is married to this person?
+
+ Their micro- and macro-design are arguably the most critical factors in graph performance
+
+![alt text](image-10.png)
+
+## Properties for relationships
+Properties for a relationship are used to enrich how two nodes are related. When you define a property for a relationship.
+
+![alt text](image-11.png)
+
+# Testing
+
+A really important factor with testing the graph is scalability. How will these queries perform if the graph has millions of nodes or relationships?
+
+# Refactoring
+updating data does not mean refactoring 
+![alt text](image-12.png)
+
+
+# Labels in a graph
+Node labels serve as an anchor point for a query. By specifying a label, we are specifying a subset of one or more nodes with which to start a query. 
+
+Your goal in modeling should be to reduce the size of the graph that is touched by a query.
+
+![alt text](image-13.png)
+
+You should use labels wisely in your data model. They should be used if it will help with **most** of your use cases. Again if the use of a property for a node will suffice, then it is best to not have the label. You can use the PROFILE keyword to see the performance for a query. When the number of labels stored against a node exceeds 4, the data is stored in different way which may prove to be slower to access at runtime.
+
+![alt text](image-14.png)
