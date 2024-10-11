@@ -6,16 +6,16 @@
 
 Nodes (or vertices) are the circles in a graph. Nodes commonly represent objects, entities, or merely things. Examples of entities that could typically be represented as a node are: person, product, event, book or subway station.
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## Directed vs. undirected graphs
 In an undirected graph, relationships are considered to be bi-directional or symmetric.
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 A directed graph adds an additional dimension of information to the graph. Directional relationships can often be qualified with some sort of weighting. 
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ## Weighted vs. unweighted graphs
 
@@ -33,13 +33,13 @@ Neo4J has additional elements which make a knowledge graph a *property graph*
 ### 1. Labels
 Through nodes we are signifying that the node belongs to a subset of nodes within the graph.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ### 2. Node Properties
 
 Properties are key, value pairs and can be added or removed from a node as necessary.
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 
 ## In short
@@ -56,7 +56,7 @@ Properties are key, value pairs and can be added or removed from a node as neces
 ## Relationship properties
 As with nodes, relationships can also have properties
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ```
 - Type and direction are must in relationships
