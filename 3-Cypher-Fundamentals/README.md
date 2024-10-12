@@ -1,11 +1,11 @@
 
 Data model used for the course
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 Cypher is a query language designed for graphs.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 We retrieve data from the graph using the MATCH keyword. You can think of the MATCH clause as similar to the FROM clause in an SQL statement.
 
@@ -253,4 +253,62 @@ MATCH (p:Person)
 WHERE p.name = 'Gene Hackman'
 SET p.born = null
 RETURN p
+```
+
+### Modifying Merge
+
+You can also customize `MERGE` with these options:
+- ON CREATE SET: Used to set properties only when a node is newly created.
+- ON MATCH SET: Used to set properties only when an existing node is found.
+- SET: Can be used to set properties regardless of whether the node was found or created.
+
+### Node Deletion
+We can delete:
+1. nodes
+2. relationships
+3. properties
+4. labels.
+
+#### Deleting a node
+```
+MATCH (p:Person {name: 'Jane Doe'})
+DELETE p
+```
+
+#### Deleting a relationship
+```
+MATCH (p:Person {name: 'Jane Doe'})-[r:ACTED_IN]->(m:Movie {title: 'The Matrix'})
+DELETE r
+```
+
+#### Deleting a Node with Relationships:
+You can't delete a node with relationships unless you remove the relationships first.
+To delete both the node and its relationships:
+
+```
+MATCH (p:Person {name: 'Jane Doe'})
+DETACH DELETE p
+```
+
+#### Deleting All nodes and relationships
+```
+MATCH (n)
+DETACH DELETE n
+```
+
+#### Managing Labels:
+Adding a label
+
+```
+MATCH (p:Person {name: 'Jane Doe'})
+SET p:Developer
+```
+Removing a label
+
+    MATCH (p:Person {name: 'Jane Doe'})
+    REMOVE p:Developer
+
+Listing All Labels in the Graph:
+```
+CALL db.labels()
 ```
